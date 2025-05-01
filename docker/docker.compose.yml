@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  worker:
+    image: locustio/locust:latest
+    command: >
+      -f /locust/load_test.py
+      --worker
+      --master-host 192.168.0.55
+    volumes:
+      - ../src:/locust:ro
